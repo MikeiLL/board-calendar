@@ -298,11 +298,23 @@ add_filter( 'generate_rewrite_rules', 'add_agenda_url_rewrite_rules' );
  * @return array An array of classes to apply to the menu item.
  */
 function add_agenda_current_menu_item_class( $classes = array(), $menu_item = false ) {
-    if ( 'board_agenda' == Extras\get_post_type_outside_loop() && 'Meeting Agenda' == $menu_item->title && ! in_array( 'current-menu-item', $classes ) )
+    if ( 'board_agenda' == get_post_type_outside_loop() && 'Meeting Agenda' == $menu_item->title && ! in_array( 'current-menu-item', $classes ) )
         $classes[] = 'current-menu-item';
 
     return $classes;
 }
 add_filter( 'nav_menu_css_class', 'add_agenda_current_menu_item_class', 10, 2 );
 
-
+/**
+ * Returns the post type for the queried data on the current page.
+ * This is useful for loading template parts for custom post types
+ * before entering the loop and outputting those posts.
+ *
+ * @return string The post type of the queried data for the current page.
+ */
+function get_post_type_outside_loop() {
+	global $wp_query;
+	if ( isset( $wp_query->query['post_type'] ) )
+		return $wp_query->query['post_type'];
+	return '';
+}
