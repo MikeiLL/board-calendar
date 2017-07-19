@@ -9,6 +9,7 @@
    License: MIT
   */
 
+require_once(__DIR__ . '/extras.php');
 require_once(__DIR__ . '/agenda-cpt.php');
 require_once(__DIR__ . '/minutes-cpt.php');
 ?>
