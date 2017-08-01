@@ -49,7 +49,7 @@ function register_agenda_post_type() {
 		'public'		=> true,
 		'menu_position'	=> 5, // Appears below Posts in the admin sidebar
 		'has_archive'	=> true,
-    'supports'    => array( 'title', 'editor', 'publicize', 'wpcom-markdown' ),
+    'supports'    => array( 'title', 'editor', 'publicize', 'author', 'wpcom-markdown' ),
 	);
 
 	register_post_type( 'board_agenda', $board_agenda_args );
@@ -79,7 +79,7 @@ function register_agenda_post_type() {
 		'public'		=> true,
 		'menu_position'	=> 5, // Appears below Posts in the admin sidebar
 		'has_archive'	=> true,
-    'supports'    => array( 'title', 'editor', 'publicize', 'wpcom-markdown' ),
+    'supports'    => array( 'title', 'editor', 'publicize', 'author', 'wpcom-markdown' ),
 	);
 
 	register_post_type( 'general_agenda', $general_agenda_args );
