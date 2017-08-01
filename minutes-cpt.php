@@ -1,6 +1,6 @@
 <?php
 
-use Roots\Sage\Extras;
+use mZoo\BoardCal\Extras;
 
 /**
  * Creates the Board and Floor Minutes post types.
