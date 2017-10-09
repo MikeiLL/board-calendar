@@ -171,7 +171,7 @@ function minutes_semesterly_archive_title_filter( $title, $sep = '&raquo;', $sep
 	$title = semesterly_archive_title_filter( $title, 'floor_minutes', 'Meeting Minutes', $sep, $seplocation );
 	return semesterly_archive_title_filter( $title, 'board_minutes', 'Meeting Minutes', $sep, $seplocation );
 }
-add_filter( 'wp_title', 'minutes_semesterly_archive_title_filter', 10, 3 );
+//add_filter( 'wp_title', 'minutes_semesterly_archive_title_filter', 10, 3 );
 
 
 

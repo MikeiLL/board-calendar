@@ -249,7 +249,7 @@ function agenda_semesterly_archive_title_filter( $title, $sep = '&raquo;', $sepl
 	$title = semesterly_archive_title_filter( $title, 'general_agenda', 'Meeting Agenda', $sep, $seplocation );
 	return semesterly_archive_title_filter( $title, 'board_agenda', 'Meeting Agenda', $sep, $seplocation );
 }
-add_filter( 'wp_title', 'agenda_semesterly_archive_title_filter', 10, 3 );
+//add_filter( 'wp_title', 'agenda_semesterly_archive_title_filter', 10, 3 );
 
 
 
