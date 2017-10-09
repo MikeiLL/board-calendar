@@ -156,25 +156,6 @@ function generate_minutes_post_title( $data ) {
 }
 add_action( 'wp_insert_post_data', 'generate_minutes_post_title' );
 
-
-/**
- * Filters the HTML title on the combined minutes archive page to always display
- * as "{Semester} {Year} Meeting Minutes".
- *
- * Without this filter the archives may simply display the year as the title.
- *
- * @param string $title Title of the page.
- * @param string $sep (optional) How to separate the various items within the page title. Default is '»'.
- * @param string $seplocation (optional) Direction to display title, 'right'.
- */
-function minutes_semesterly_archive_title_filter( $title, $sep = '&raquo;', $seplocation = 'right' ) {
-	$title = semesterly_archive_title_filter( $title, 'floor_minutes', 'Meeting Minutes', $sep, $seplocation );
-	return semesterly_archive_title_filter( $title, 'board_minutes', 'Meeting Minutes', $sep, $seplocation );
-}
-//add_filter( 'wp_title', 'minutes_semesterly_archive_title_filter', 10, 3 );
-
-
-
 /**
  * Allows WordPress to recognize the semesterly URL structure of the
  * combined Floor and Board Minutes post types' archive page.

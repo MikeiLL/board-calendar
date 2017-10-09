@@ -235,23 +235,6 @@ function save_custom_meta($post_id) {
     }
 }
 add_action('save_post', 'save_custom_meta');
-/**
- * Filters the HTML title on the combined agenda archive page to always display
- * as "{Semester} {Year} Meeting Agenda".
- *
- * Without this filter the archives may simply display the year as the title.
- *
- * @param string $title Title of the page.
- * @param string $sep (optional) How to separate the various items within the page title. Default is '»'.
- * @param string $seplocation (optional) Direction to display title, 'right'.
- */
-function agenda_semesterly_archive_title_filter( $title, $sep = '&raquo;', $seplocation = 'right' ) {
-	$title = semesterly_archive_title_filter( $title, 'general_agenda', 'Meeting Agenda', $sep, $seplocation );
-	return semesterly_archive_title_filter( $title, 'board_agenda', 'Meeting Agenda', $sep, $seplocation );
-}
-//add_filter( 'wp_title', 'agenda_semesterly_archive_title_filter', 10, 3 );
-
-
 
 /**
  * Allows WordPress to recognize the semesterly URL structure of the
